@@ -54,7 +54,7 @@ Through log correlation across multiple data sources in Microsoft Defender for E
 | **13:01–13:02** | Autorun Key Persistence Added | Persistence (Fallback) | Registry-based autorun persistence created → `RemoteAssistUpdater` |
 | **13:02** | Narrative Artifact Creation | Cover Tracks / Misdirection | Deceptive support-themed log created → `SupportChat_log.lnk` |
 
-## Analytic Finding 1 — Starting Point Identification
+## Starting Point - Identification
 
 ### **Objective**
 Determine which endpoint should serve as the primary focus of the investigation by identifying systems that executed suspicious support-themed files from the Downloads directory during the early-October activity window. The goal is to isolate the earliest and most relevant host tied to the initial execution of potentially unauthorized tooling.
@@ -90,5 +90,51 @@ DeviceFileEvents
 | where DeviceName contains "intern"
 | project TimeGenerated, SHA256, DeviceName, FileName, FolderPath
 ```
+### **Query Result**
 <img width="1412" height="235" alt="vm_discovery" src="https://github.com/user-attachments/assets/f0247d46-722d-4e5e-b5af-d2f37e6eca0f" />
 
+## Analytic Finding 1 — Initial Execution Detection (Entry Point Identification)
+
+### **Objective**
+Detect the earliest anomalous execution that could represent an entry point into the system. The goal is to identify activity that deviates from normal user behavior and anchors the intrusion timeline.
+
+### **What to Hunt**
+- Script execution originating from **Downloads**  
+- PowerShell or command-line activity run with **execution policy bypasses**  
+- Support-themed or tool-themed file names  
+- Processes initiated by common script hosts (PowerShell, CMD, Python, WScript, CScript)
+
+### **Finding**
+The first confirmed anomalous execution occurred on **gab-intern-vm**, where the intern-operated account **g4bri3lintern** launched a script named **SupportTool.ps1** from the Downloads directory. The script was executed using:
+`-ExecutionPolicy Bypass`
+
+This behavior deviated significantly from expected baseline activity. The naming convention (e.g., *support*, *tool*) also aligned with indicators observed on other affected machines, marking this as the earliest actionable point in the intrusion chain.
+
+Because this event involved both **execution policy bypassing** and **support-themed script names**, it was identified as the true **entry point** for the threat hunt.
+
+### **Evidence**
+Within the October 1–15 telemetry window:
+
+- Process activity showed direct execution of `SupportTool.ps1`  
+- The file originated from the user’s **Downloads** directory  
+- The responsible account was an **intern**, matching early scoping intel  
+- Multiple parent processes (CMD/PowerShell) were observed initiating script execution  
+- A command-line argument extraction revealed the **first suspicious parameter**, confirming intentional script invocation  
+
+This execution was the earliest evidence of suspicious tooling and became the foundation for reconstructing the attack sequence.
+
+### **Query Used**
+```kql
+DeviceProcessEvents 
+| where TimeGenerated between(datetime(2025-10-01T00:00:00Z) .. datetime(2025-10-15T23:59:59Z))
+| where DeviceName == "gab-intern-vm"
+| where AccountName == "g4bri3lintern"
+| where ProcessCommandLine contains "SupportTool.ps1"
+| where InitiatingProcessFileName has_any ("cmd.exe","powershell.exe","python.exe","wscript.exe","cscript.exe")
+| extend FirstParam = extract(@"(\s+[-/]{1,2}[A-Za-z0-9\-_]+)", 1, ProcessCommandLine)
+| where isnotempty(FirstParam)
+| project TimeGenerated, DeviceName, FileName, ProcessCommandLine, FirstParam
+| order by TimeGenerated asc
+```
+### **Query Result**
+<img width="1162" height="235" alt="Flag_1" src="https://github.com/user-attachments/assets/c89af505-4b4c-4eb7-9f0f-e8704b48254e" />
