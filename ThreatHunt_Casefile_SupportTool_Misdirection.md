@@ -89,3 +89,5 @@ DeviceFileEvents
   and FolderPath contains "Download"
 | where DeviceName contains "intern"
 | project TimeGenerated, SHA256, DeviceName, FileName, FolderPath
+
+https://github.com/westonh2-cyber/Threat_Hunting_Projects/blob/9312445c0bbc292caea585c0ae5fd0be6266e533/Screenshots/vm_discovery.png
