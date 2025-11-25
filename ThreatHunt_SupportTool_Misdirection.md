@@ -2,10 +2,10 @@
 
 - [Introduction](#introduction)
 - [Scenario Overview](#scenario-overview)
-- [Full Timeline](#full-timeline)
+- [Full Timeline](#full-timeline-of-observed-activity)
 
 ## Analytic Findings
-- [Finding 0 — Starting Point Identification](#analytic-finding-0--starting-point-identification)
+- [Starting Point Identification](#starting-point-identification)
 - [Finding 1 — Initial Execution Detection](#analytic-finding-1--initial-execution-detection-entry-point-identification)
 - [Finding 2 — Tamper-Like Artifact Creation](#analytic-finding-2--tamper-like-artifact-creation-defense-deception)
 - [Finding 3 — Clipboard Probe](#analytic-finding-3--clipboard-probe-quick-data-check)
