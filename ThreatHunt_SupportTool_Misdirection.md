@@ -1,3 +1,38 @@
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Scenario Overview](#scenario-overview)
+- [Full Timeline](#full-timeline)
+
+## Analytic Findings
+- [Finding 0 — Starting Point Identification](#analytic-finding-0--starting-point-identification)
+- [Finding 1 — Initial Execution Detection](#analytic-finding-1--initial-execution-detection-entry-point-identification)
+- [Finding 2 — Tamper-Like Artifact Creation](#analytic-finding-2--tamper-like-artifact-creation-defense-deception)
+- [Finding 3 — Clipboard Probe](#analytic-finding-3--clipboard-probe-quick-data-check)
+- [Finding 4 — Session Recon](#analytic-finding-4--session-recon-active-user--session-enumeration)
+- [Finding 5 — Storage Surface Mapping](#analytic-finding-5--storage-surface-mapping-logical-disk-enumeration)
+- [Finding 6 — Connectivity--name-resolution-check](#analytic-finding-6--connectivity--name-resolution-check-dns--network-reachability)
+- [Finding 7 — Interactive Session Discovery](#analytic-finding-7--interactive-session-discovery-user--session-awareness-checks)
+- [Finding 8 — Runtime Application Inventory](#analytic-finding-8--runtime-application-inventory-process--service-enumeration)
+- [Finding 9 — Privilege Surface Check](#analytic-finding-9--privilege-surface-check-identity--group-enumeration)
+- [Finding 10 — Proof-of-Access & Egress Validation](#analytic-finding-10--proof-of-access--egress-validation-outbound-reachability--data-capture-readiness)
+- [Finding 11 — Bundling--staging-artifacts](#analytic-finding-11--bundling--staging-artifacts-reconartifactszip-creation)
+- [Finding 12 — Outbound Transfer Attempt](#analytic-finding-12--outbound-transfer-attempt-simulated-exfiltration-to-external-host)
+- [Finding 13 — Scheduled Re-Execution Persistence](#analytic-finding-13--scheduled-re-execution-persistence-supporttoolupdater-task)
+- [Finding 14 — Autorun Fallback Persistence](#analytic-finding-14--autorun-fallback-persistence-remoteassistupdater-registry-run-key)
+- [Finding 15 — Planted Narrative Artifact](#analytic-finding-15--planted-narrative-artifact-supportchat_loglnk)
+
+## MITRE Sections
+- [MITRE ATT&CK Mapping Table](#mitre-attck-mapping-table)
+- [MITRE Summary by Tactic](#mitre-summary-by-tactic)
+- [MITRE ATT&CK Narrative](#mitre-attck-narrative)
+
+## Recommendations & Wrap-Up
+- [After-Action Recommendations](#after-action-recommendations)
+- [Summary](#summary)
+- [Conclusion](#conclusion)
+
+
 ## Introduction
 This case study documents a full, end-to-end threat-hunting investigation into suspicious activity identified on the endpoint **gab-intern-vm**. What initially appeared to be a routine remote support interaction quickly revealed a chain of actions that did not align with legitimate troubleshooting behavior. As the investigation unfolded, a clear pattern emerged, one involving staged tamper indicators, host reconnaissance, persistence mechanisms, and attempted outbound data transfer.
 
