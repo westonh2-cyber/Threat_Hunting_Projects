@@ -1361,3 +1361,5 @@ Throughout the timeline, the attacker demonstrated a strong preference for **liv
 Although the exfiltration attempt did not result in confirmed data loss, the presence of a staged ZIP archive and outbound transfer attempts shows clear intent to extract reconnaissance data. Combined with both primary and fallback persistence mechanisms, the actor was positioned to regain access to the endpoint if left uninterrupted.
 
 Overall, this situation highlights the importance of monitoring user-context script execution, detecting reconnaissance behaviors early, and correlating subtle artifacts such as deceptive log files or naming conventions into a holistic narrative. Effective detection relies not only on individual alerts but on understanding how sequential low-signal events build toward a clearly malicious operational pattern.
+
+[Back to Top](#table-of-contents)
