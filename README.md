@@ -1,4 +1,4 @@
-# 🧠 Threat Hunting Projects
+# Threat Hunting Projects
 
 Welcome to my **Threat Hunting Projects Repository** — a detailed collection of hands-on investigations, detections, and analyses focused on identifying, understanding, and mitigating malicious activity within enterprise environments.
 
