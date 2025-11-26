@@ -32,6 +32,7 @@
 - [Summary](#summary)
 - [Conclusion](#conclusion)
 
+- [Table of Contents](table-of-contents)
 
 ## Introduction
 This case study documents a full, end-to-end threat-hunting investigation into suspicious activity identified on the endpoint **gab-intern-vm**. What initially appeared to be a routine remote support interaction quickly revealed a chain of actions that did not align with legitimate troubleshooting behavior. As the investigation unfolded, a clear pattern emerged, one involving staged tamper indicators, host reconnaissance, persistence mechanisms, and attempted outbound data transfer.
