@@ -32,8 +32,6 @@
 - [Summary](#summary)
 - [Conclusion](#conclusion)
 
-- [Table of Contents](table-of-contents)
-
 ## Introduction
 This case study documents a full, end-to-end threat-hunting investigation into suspicious activity identified on the endpoint **gab-intern-vm**. What initially appeared to be a routine remote support interaction quickly revealed a chain of actions that did not align with legitimate troubleshooting behavior. As the investigation unfolded, a clear pattern emerged, one involving staged tamper indicators, host reconnaissance, persistence mechanisms, and attempted outbound data transfer.
 
@@ -631,7 +629,6 @@ On **gab-intern-vm**, the actor executed:
 
 `"cmd.exe" /c whoami /groups`
 
-
 This command enumerates:
 
 - The full group membership of the current user  
@@ -692,7 +689,6 @@ On **gab-intern-vm**, the actor performed an outbound connectivity test by gener
 
 `www.msftconnecttest.com`
 
-
 The event occurred at:
 
 **2025-10-09T12:55:05Z**
@@ -700,7 +696,6 @@ The event occurred at:
 Telemetry classified the action as:
 
 `ActionType: ConnectionSuccess`
-
 
 This domain is legitimately used by Windows network stack diagnostics, but in this case, it was triggered during a sequence of attacker-driven reconnaissance and staging steps—not by system processes.
 
@@ -772,7 +767,6 @@ Shortly after completing reconnaissance and outbound connectivity checks, the ac
 The file was dropped into a highly accessible public directory:
 
 C:\Users\Public\
-
 
 The timestamp of the creation event was:
 
@@ -851,7 +845,6 @@ This connection was logged at:
 The initiating process was:
 
 `powershell.exe`
-
 
 This behavior strongly aligns with exfiltration testing. `httpbin.org` offers endpoints capable of receiving uploads and returning structured responses—making it a known tool for validating outbound POST capabilities without using attacker-controlled infrastructure.
 
@@ -973,7 +966,6 @@ Following the creation of the scheduled task `SupportToolUpdater`, telemetry ind
 Although the registry table did not return the event (as noted in the exercise instructions), the provided intelligence confirmed this value existed under a user-scope autorun location such as:
 
 `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`
-
 
 This aligns with the attacker’s operational pattern:
 
@@ -1110,6 +1102,8 @@ Planted artifacts are one of the clearest indicators of intentional deception in
 This behavior demonstrates a high level of intentionality and awareness. The actor did not simply run malicious commands—they attempted to **control the interpretation** of their activity.
 
 In real-world intrusions, narrative manipulation is a tactic used by advanced threat actors to delay detection, frustrate responders, and obscure intent. Detecting this planted artifact is crucial because it exposes the attacker’s attempt to conceal their true objectives.
+
+[Back to Top](#threathunt_supporttool_misdirection)
 
 ## MITRE ATT&CK Mapping Table
 
