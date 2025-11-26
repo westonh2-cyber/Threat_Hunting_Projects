@@ -5,7 +5,7 @@
 - [Full Timeline](#full-timeline-of-observed-activity)
 
 ## Analytic Findings
-- [Starting Point Identification](#starting-point--identification)
+- [Starting Point - Identification](#starting-point---identification)
 - [Finding 1 — Initial Execution Detection](#analytic-finding-1--initial-execution-detection-entry-point-identification)
 - [Finding 2 — Tamper-Like Artifact Creation](#analytic-finding-2--tamper-like-artifact-creation-defense-deception)
 - [Finding 3 — Clipboard Probe](#analytic-finding-3--clipboard-probe-quick-data-check)
