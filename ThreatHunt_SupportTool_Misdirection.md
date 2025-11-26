@@ -1103,7 +1103,7 @@ This behavior demonstrates a high level of intentionality and awareness. The act
 
 In real-world intrusions, narrative manipulation is a tactic used by advanced threat actors to delay detection, frustrate responders, and obscure intent. Detecting this planted artifact is crucial because it exposes the attacker’s attempt to conceal their true objectives.
 
-[Back to Top](#threathunt_supporttool_misdirectionmd)
+[Back to Top](#table-of-contents)
 
 ## MITRE ATT&CK Mapping Table
 
