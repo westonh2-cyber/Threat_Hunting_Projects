@@ -1,0 +1,35 @@
+# --- OS cruft ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Claude Code local state (machine-specific, not shared) ---
+.claude/settings.local.json
+.claude/shell-snapshots/
+
+# --- Secrets: never commit these ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.json
+secrets.json
+*_rsa
+*_rsa.pub
+
+# --- Docs repo: local scratch only ---
+*.log
+*.tmp
+*.bak
+~$*
