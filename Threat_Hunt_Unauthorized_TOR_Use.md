@@ -1,4 +1,4 @@
-> **Course-derived.** This scenario-creation guide is Josh Madakor's, from his Cyber Range course ([original](https://github.com/joshmadakor0/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)). It is kept here unchanged, for reference.
+> **Course-derived.** This scenario-creation guide is Josh Madakor's, from his Cyber Range course ([original](https://github.com/joshmadakor0/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)). It is kept here unchanged, for reference. The threat-hunt report built on this scenario is his too, and lives at his original: [joshmadakor0/threat-hunting-scenario-tor](https://github.com/joshmadakor0/threat-hunting-scenario-tor).
 
 # Threat Event (Unauthorized TOR Usage)
 **Unauthorized TOR Browser Installation and Use**

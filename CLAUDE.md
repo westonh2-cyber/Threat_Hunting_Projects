@@ -1,7 +1,7 @@
 # CLAUDE.md — Threat_Hunting_Projects
 
-Written threat-hunt investigations. Documentation, not code — six markdown
-reports and a README index.
+Written threat-hunt investigations. Documentation, not code — four markdown
+files and a README index.
 
 **Status:** stable. Last commit 2025-12-23.
 
@@ -9,7 +9,13 @@ reports and a README index.
 
 `Discovered_pivoting_and_exfil_of_financial_and_secrets.md`,
 `Suspected_intrustion_of_VM.md`, `ThreatHunt_SupportTool_Misdirection.md`,
-`Threat_Hunt_Scenario_TOR.md`, `Threat_Hunt_Unauthorized_TOR_Use.md`.
+`Threat_Hunt_Unauthorized_TOR_Use.md`.
+
+`Threat_Hunt_Unauthorized_TOR_Use.md` is Josh Madakor's course material, kept
+under his name and labelled course-derived. The TOR hunt report that went with
+it (`Threat_Hunt_Scenario_TOR.md`) was a word-for-word copy of his and was
+removed on 2026-10-18; the guide now links to his original at
+`joshmadakor0/threat-hunting-scenario-tor`.
 
 Note `Suspected_intrustion_of_VM.md` carries a typo in the filename. Renaming it
 breaks any external link to it; leave it unless asked.
