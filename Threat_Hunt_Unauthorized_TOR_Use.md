@@ -1,3 +1,5 @@
+> **Course-derived.** This scenario-creation guide is Josh Madakor's, from his Cyber Range course ([original](https://github.com/joshmadakor0/threat-hunting-scenario-tor/blob/main/threat-hunting-scenario-tor-event-creation.md)). It is kept here unchanged, for reference.
+
 # Threat Event (Unauthorized TOR Usage)
 **Unauthorized TOR Browser Installation and Use**
 
@@ -75,9 +77,9 @@ DeviceFileEvents
 ---
 
 ## Created By:
-- **Author Name**: Weston Henderson
-- **Author Contact**: https://www.linkedin.com/in/westonh2-cyber/
-- **Date**: October 23, 2025
+- **Author Name**: Josh Madakor
+- **Author Contact**: https://www.linkedin.com/in/joshmadakor/
+- **Date**: August 31, 2024
 
 ## Validated By:
 - **Reviewer Name**: 
@@ -90,3 +92,8 @@ DeviceFileEvents
 - **None**
 
 ---
+
+## Revision History:
+| **Version** | **Changes**                   | **Date**         | **Modified By**   |
+|-------------|-------------------------------|------------------|-------------------|
+| 1.0         | Initial draft                  | `September  6, 2024`  | `Josh Madakor`   
