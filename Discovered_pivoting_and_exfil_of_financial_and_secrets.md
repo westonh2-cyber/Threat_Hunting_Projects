@@ -6,27 +6,16 @@ The case study reconstructs attacker activity from lateral movement through cred
 ## Case Navigation
 
 ### Core Narrative
-- [Introduction](01_Introduction.md)
-- [Scenario Overview](02_Scenario_Overview.md)
-- [Full Timeline](03_Timeline.md)
+- [Introduction](#introduction)
+- [Scenario Overview](#scenario-overview)
 
 ### Analytic Findings
-- [Starting Point](findings/00_Starting_Point.md)
-- [Lateral Movement](findings/01_Lateral_Movement.md)
-- [Execution](findings/02_Execution.md)
-- [Persistence](findings/03_Persistence.md)
-- [Discovery](findings/04_Discovery.md)
-- [Collection](findings/05_Collection.md)
-- [Exfiltration](findings/06_Exfiltration.md)
-- [Credential Store Compromise](findings/07_Credential_Store_Compromise.md)
-
-### MITRE ATT&CK Analysis
-- [MITRE Mapping Table](mitre/MITRE_Mapping_Table.md)
-- [MITRE Summary by Tactic](mitre/MITRE_Summary_By_Tactic.md)
-- [MITRE ATT&CK Narrative](mitre/MITRE_Narrative.md)
-
-### Wrap-Up
-- [Conclusion & Recommendations](99_Conclusion_and_Recommendations.md)
+- [Starting Point: Identification](#starting-point--identification)
+- [Finding 1: Lateral Movement](#analytic-finding-1-lateral-movement)
+- [Finding 4/5: External Payload Hosting & Malware Download](#analytic-finding-45-external-payload-hosting-infrastructure--malware-download-command)
+- [Finding 6: Password-Protected Archive Extraction](#analytic-finding-6-password-protected-archive-extraction)
+- [Finding 7: C2 Implant Deployment](#analytic-finding-7-c2-implant-deployment)
+- [Finding 8: Named Pipe C2 Channel Establishment](#analytic-finding-8-named-pipe-c2-channel-establishment)
 
 # Introduction
 
